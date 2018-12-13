@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录|一淘网</title>
+<style type="text/css">
+body,p,dl,dd,ul,ol,li,div,h1,h2,h3,h4,h5,h6,form,input,table,tr,td{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family: "微软雅黑",Arial;
+	background:#f8f8f8;
+}
+ul,ol{
+	list-style:none;
+}
+img{
+	border: 0;
+}
+a{
+	text-decoration: none;
+}
+.header{
+	display:flex;
+	width:100%;
+	height:100%;
+}
+.header_left{
+	flex:1;
+	width:750px;
+	height:340px;
+	/*background:pink;*/
+	position:relative;
+}
+.header_right{
+	flex:1;
+	background:orange;
+	position:relative;
+}
+.header_right form{
+	position:absolute;
+	left:40px;
+	top:40px;
+}
+span{background: #ccc;}
+</style>
+</head>
+<body>
+	<div class="header">
+		<div class="header_left" id="banner_left"></div>
+		<div class="header_right">
+			<form action="login-etao.php" method="post">
+			用&nbsp;户&nbsp;名：&nbsp;<input type="text" id="username" name="userName"><span id="userSpan"></span><span id="nameSpan"></span><br><br>
+			<div id="selectName"></div>
+			密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：&nbsp;&nbsp;<input type="password" id="userpass" name="userPass"><br><br>
+			<input type="submit" value="登录" id="loginBtn" style="width:230px;">
+			<input type="checkbox" id="checkId">记住用户名
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/tool.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/cookieTool.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+	// banner_left
+	let s2 = new Slider(
+		$("#banner_left"),
+		750,
+		340,
+		["img/ban1.jpg","img/ban2.jpg"],
+		12,
+		"white",
+		"#fc3434",
+		true,
+		3000
+		);
+	s2.createUI();
+	s2.autoPlay();
+	s2.addEvent();
+	$("#loginBtn").onclick=function(){
+		//1.到服务器端验证用户名和密码是否正确
+		//2.保存cookie
+		var userName=$('#username').value;
+		if($('#checkId').checked==true){
+			saveCookie("userId",userName,100);
+			alert('用户名保存成功');
+		}
+		//3.跳转登录
+		// location.href="index.html";
+	}
+
+}
+</script>

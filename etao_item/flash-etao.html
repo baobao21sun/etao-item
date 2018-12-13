@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>一淘网|限时闪购</title>
+<link rel="stylesheet" type="text/css" href="css/flash.css">
+</head>
+<body>
+<!-- top -->
+	<a class="etaoBg" href="javascript:;"></a>
+	<div class="etaoTop">
+		<div class="top_left">欢迎来到一淘网，阿里巴巴旗下生活省钱利器！</div>
+		<div class="top_right">
+			<div class="top_login">
+				<div id="welcomeBox" style="float:left;display:none;color:#37383d;">
+					欢迎您：<span id="spanId"></span>
+					<input type="button" value="退出" id="btnOut" style="outline:none;font-size:8px;background:#ccc;color:red;">
+				</div>
+				<div id="loginBox" style="float:left;display:none;color:#37383d;">
+					<a href="http://localhost/etao_item/login-etao.html">请登录</a>
+				</div>
+			</div>
+			<ul class="top_list">
+				<li>
+					<span class="li_long">|</span>
+					<span>我的订单</span>
+				</li>
+				<li>购物车</li>
+				<li>我的集分宝</li>
+				<li>消息</li>
+				<li>商家报名</li>
+			</ul>
+		</div>
+	</div>
+<!-- header -->
+	<div class="etaoHeader">
+		<div class="header_left">
+			<a href="javascript:;"><img src="img/etao.jpg" alt=""></a>
+		</div>
+		<div class="header_search">
+			<form>
+				<input class="txt" type="text" placeholder="购物拿返利，手机下单更便捷"/>
+				<input class="btn" type="submit"/>
+			</form>
+			<ul class="search_list">
+				<li><a href="javascript:;">女装</a></li>
+				<li><a href="javascript:;">女鞋</a></li>
+				<li><a href="javascript:;">女靴</a></li>
+				<li><a href="javascript:;">女包</a></li>
+				<li><a href="javascript:;">半身裙</a></li>
+				<li><a href="javascript:;">华为</a></li>
+				<li><a href="javascript:;">iphone</a></li>
+				<li><a href="javascript:;">阔腿裤</a></li>
+				<li><a href="javascript:;">男裤</a></li>
+				<li><a href="javascript:;">华为手机</a></li>
+			</ul>
+		</div>
+		<div class="header_right">
+			<a href="javascript:;"><img src="img/eapp.jpg" alt=""></a>
+		</div>
+	</div>
+<!-- tools -->
+	<div class="tools" id="tool">
+		<ul class="tool_item">
+			<li><a href="javascript:;" target="_blank">我的收藏</a></li>
+			<li><a href="javascript:;" target="_blank">点我领钱</a></li>
+			<li><a href="javascript:;" target="_blank">意见反馈</a></li>
+			<li><a href="javascript:;" target="_blank">智能客服</a></li>
+			<li><a href="javascript:;" target="_blank">新手指南</a></li>
+			<li  id="backToTop"><a href="javascript:;" target="_blank">回到顶部</a></li>
+		</ul>
+	</div>
+<!-- first-nav -->
+	<div class="firstNav">
+		<div class="first_item">
+			<a href="javascript:;">首页</a>
+			<a href="#brandSale">品牌特卖</a>
+			<a href="javascript:;">限时闪购</a>
+		</div>	
+	</div>
+<!-- second-nav -->
+	<div class="secondNav" id="second-nav">
+		<ul class="nav_item" id="ul-item">
+			<li>
+				<a  class="lis one" href="javascript:;">
+					<p>16:00开场</p><p>已开始</p><span></span>
+				</a>
+			</li>
+			<li>
+				<a  class="lis one" href="javascript:;">
+					<p>20:00开场</p><p>已开始</p><span></span>
+				</a>
+			</li>
+			<li>
+				<a  class="lis one" href="javascript:;">
+					<p>00:00开场</p><p>进行中</p><span></span>
+				</a>
+			</li>
+			<li>
+				<a  class="lis one" href="javascript:;">
+					<p>10:00开场</p><p>未开始</p><span></span>
+				</a>
+			</li>
+			<li>
+				<a  class="lis one" href="javascript:;">
+					<p>14:00开场</p><p>未开始</p><span></span>
+				</a>
+			</li>
+			<li>
+				<a  class="lis one" href="javascript:;">
+					<p>18:00开场</p><p>未开始</p><span></span>
+				</a>
+			</li>
+			<li>
+				<a  class="lis one" href="javascript:;">
+					<p>20:00开场</p><p>未开始</p><span></span>
+				</a>
+			</li>
+			<li>
+				<a  class="lis one" href="javascript:;">
+					<p>22:00开场</p><p>未开始</p><span></span>
+				</a>
+			</li><li>
+				<a  class="lis one" href="javascript:;">
+					<p>00:00开场</p><p>未开始</p><span></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+<!-- banner -->
+	<!-- <div class="banner">
+		<div class="brand">
+			<div id="foods" class="brand_one"></div>
+			<div  id="banner" class="brand_two"></div>
+			<div class="brand_three">
+				<div class="unloged">
+					<img class="user" src="img/login.jpg" alt="">
+					<p class="tip">立刻登录，立刻省钱</p>
+					<a href="http://localhost/etao_item/login-etao.html" class="login">用户登录</a>
+					<a href="http://localhost/etao_item/reg-etao.html" class="reg">新用户注册</a>
+				</div>
+				<span></span>
+				<div class="QRcode">
+					<div class="title"><img src="img/title.jpg" alt=""></div>
+					<div class="scann"><img src="img/er.jpg" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+<!-- img -->
+	<!-- <div class="center"></div> -->
+<!-- timeout-buying -->
+	<div class="timeoutBuying">
+		<div class="timeout_item">
+			<div class="buying_header">
+				<a href="javascript:;" class="discount"><img src="img/discount.jpg" alt=""></a>
+				<div class="buying_header_right">
+					<span class="count_down">距离下一场还有
+						<input type="text" id="hours" value="00" style="width:22px;height:22px;border:1px solid #333333;background:#333333;border-radius:5px;color:white;text-align:center"/>:
+						<input type="text" id="mins" value="00" style="width:22px;height:22px;border:1px solid #333333;background:#333333;border-radius:5px;color:white;text-align:center"/>:
+						<input type="text" id="secs" value="00" style="width:22px;height:22px;border:1px solid #333333;background:#333333;border-radius:5px;color:white;text-align:center"/>
+					</span>
+				 	<a class="more" href="javascript:;">更多<span></span></a>
+				</div>
+			</div>
+			<div class="buying_goods">
+				<a href="http://localhost/etao_item/goods-etao.html" class="goods_photo"><img src="img/goods_discount.jpg" alt=""></a>
+				<div class="goods_detail">
+					<span class="goods_detail_title"><a href="http://localhost/etao_item/goods-etao.html">饭扫光香菇牛肉酱200g*2瓶四川特产下饭菜炸酱拌面酱香辣酱</a></span>
+					<span class="goods_detail_price"><span>￥69</span><span>再返34.77</span></span><br>
+					<span class="goods_detail_progress">尚未开始</span>
+					<span class="goods_detail_warning">未开始</span>
+				</div>
+			</div>
+			<div class="buying_goods">
+				<a href="http://localhost/etao_item/goods-etao.html" class="goods_photo"><img src="img/goods_discount.jpg" alt=""></a>
+				<div class="goods_detail">
+					<span class="goods_detail_title"><a href="http://localhost/etao_item/goods-etao.html">饭扫光香菇牛肉酱200g*2瓶四川特产下饭菜炸酱拌面酱香辣酱</a></span>
+					<span class="goods_detail_price"><span>￥69</span><span>再返34.77</span></span><br>
+					<span class="goods_detail_progress">尚未开始</span>
+					<span class="goods_detail_warning">未开始</span>
+				</div>
+			</div>
+			<div class="buying_goods">
+				<a href="http://localhost/etao_item/goods-etao.html" class="goods_photo"><img src="img/goods_discount.jpg" alt=""></a>
+				<div class="goods_detail">
+					<span class="goods_detail_title"><a href="http://localhost/etao_item/goods-etao.html">饭扫光香菇牛肉酱200g*2瓶四川特产下饭菜炸酱拌面酱香辣酱</a></span>
+					<span class="goods_detail_price"><span>￥69</span><span>再返34.77</span></span><br>
+					<span class="goods_detail_progress">尚未开始</span>
+					<span class="goods_detail_warning">未开始</span>
+				</div>
+			</div>
+			<div class="buying_goods">
+				<a href="http://localhost/etao_item/goods-etao.html" class="goods_photo"><img src="img/goods_discount.jpg" alt=""></a>
+				<div class="goods_detail">
+					<span class="goods_detail_title"><a href="http://localhost/etao_item/goods-etao.html">饭扫光香菇牛肉酱200g*2瓶四川特产下饭菜炸酱拌面酱香辣酱</a></span>
+					<span class="goods_detail_price"><span>￥69</span><span>再返34.77</span></span><br>
+					<span class="goods_detail_progress">尚未开始</span>
+					<span class="goods_detail_warning">未开始</span>
+				</div>
+			</div>
+			<div class="buying_goods">
+				<a href="http://localhost/etao_item/goods-etao.html" class="goods_photo"><img src="img/goods_discount.jpg" alt=""></a>
+				<div class="goods_detail">
+					<span class="goods_detail_title"><a href="http://localhost/etao_item/goods-etao.html">饭扫光香菇牛肉酱200g*2瓶四川特产下饭菜炸酱拌面酱香辣酱</a></span>
+					<span class="goods_detail_price"><span>￥69</span><span>再返34.77</span></span><br>
+					<span class="goods_detail_progress">尚未开始</span>
+					<span class="goods_detail_warning">未开始</span>
+				</div>
+			</div>
+			<div class="buying_goods">
+				<a href="http://localhost/etao_item/goods-etao.html" class="goods_photo"><img src="img/goods_discount.jpg" alt=""></a>
+				<div class="goods_detail">
+					<span class="goods_detail_title"><a href="http://localhost/etao_item/goods-etao.html">饭扫光香菇牛肉酱200g*2瓶四川特产下饭菜炸酱拌面酱香辣酱</a></span>
+					<span class="goods_detail_price"><span>￥69</span><span>再返34.77</span></span><br>
+					<span class="goods_detail_progress">尚未开始</span>
+					<span class="goods_detail_warning">未开始</span>
+				</div>
+			</div>
+			<div class="buying_goods">
+				<a href="http://localhost/etao_item/goods-etao.html" class="goods_photo"><img src="img/goods_discount.jpg" alt=""></a>
+				<div class="goods_detail">
+					<span class="goods_detail_title"><a href="http://localhost/etao_item/goods-etao.html">饭扫光香菇牛肉酱200g*2瓶四川特产下饭菜炸酱拌面酱香辣酱</a></span>
+					<span class="goods_detail_price"><span>￥69</span><span>再返34.77</span></span><br>
+					<span class="goods_detail_progress">尚未开始</span>
+					<span class="goods_detail_warning">未开始</span>
+				</div>
+			</div>
+			<div class="buying_goods">
+				<a href="http://localhost/etao_item/goods-etao.html" class="goods_photo"><img src="img/goods_discount.jpg" alt=""></a>
+				<div class="goods_detail">
+					<span class="goods_detail_title"><a href="http://localhost/etao_item/goods-etao.html">饭扫光香菇牛肉酱200g*2瓶四川特产下饭菜炸酱拌面酱香辣酱</a></span>
+					<span class="goods_detail_price"><span>￥69</span><span>再返34.77</span></span><br>
+					<span class="goods_detail_progress">尚未开始</span>
+					<span class="goods_detail_warning">未开始</span>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- brand_sale -->
+	<!-- <div class="brand_sale" id="brandSale">
+		title
+		<div class="brand_new" >
+			<a href="javascript:;">
+				<span>品牌特卖</span>
+				<span>每日10点上新</span>
+			</a>
+		</div>
+		super-item
+		<div class="super" id="superDiv"></div>
+	</div> -->
+<!-- footer -->
+	<div class="footer">
+		<div class="etao-footer">
+			<div class="etao_footer_list">
+				<dl>
+					<dt>关于我们</dt>
+					<dd><a href="javascript:;" target="_blank" titile="关于我们">关于一淘</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="法律声明">法律声明</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="诚聘英才">诚聘英才</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="廉政邮箱">廉政邮箱</a></dd>
+				</dl>
+				<dl>
+					<dt>帮助中心</dt>
+					<dd><a href="javascript:;" target="_blank" titile="新手指南">新手指南</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="关于返利">关于返利</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="关于集分宝">关于集分宝</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="关于会员特权">关于会员特权</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="联系客服">联系客服</a></dd>
+				</dl>
+				<dl>
+                  <dt align="center">手机一淘</dt>
+                  <dd>
+                      <a class="etao-scan" href="//mo.m.taobao.com/etao/etao_pc_download" target="_blank"><img src="img/load.jpg" width="119" height="162" alt="手机一淘"></a>
+                  </dd>
+              </dl>
+              <dl>
+                  <dt>优惠地图</dt>
+                      <dd>
+                        <a href="//www.etao.com/index.htm?jumpTo=J_superrebate" target="_blank" title="品牌特卖">品牌特卖</a>
+                      </dd>
+                      <dd>
+                        <a href="//www.etao.com/cjfl/flash.htm" target="_blank" title="限时闪购">限时闪购</a>
+                      </dd>
+              </dl>
+              <dl>
+                  <dt>商家合作</dt>
+                      <dd>
+                        <a href="//etao.bbs.taobao.com/detail.html?postId=2304505" target="_blank" title="报名入口">报名入口</a>
+                      </dd>
+                      <dd>
+                        <a href="//www.etao.com/newguide.htm?systype=wapa#!/main/guide?tab=aboutSeller" target="_blank" title="商家端问题">商家端问题</a>
+                      </dd>
+              </dl>
+			</div>
+			<div class="etao_footer_link">
+
+				<div class="etao_wrap">
+					<a target="_blank" class="dib" href="//page.1688.com/shtml/about/ali_group1.shtml">阿里巴巴集团</a>
+					<a target="_blank" class="dib" href="//www.taobao.com/">淘宝网</a>
+					<a target="_blank" class="dib" href="//www.tmall.com/">天猫</a>
+					<a target="_blank" class="dib" href="//ju.taobao.com/">聚划算</a>
+					<a target="_blank" class="dib" href="//www.aliexpress.com/">全球速卖通</a>
+					<a target="_blank" class="dib" href="//www.alibaba.com/">阿里巴巴国际交易市场</a>
+					<a target="_blank" class="dib" href="//www.1688.com/">1688</a><a target="_blank" class="dib" href="//www.alimama.com/">阿里妈妈</a>
+					<a target="_blank" class="dib" href="//www.alitrip.com/">阿里旅行·去啊</a>
+					<a target="_blank" class="dib" href="//www.aliyun.com/">阿里云计算</a>
+					<a target="_blank" class="dib" href="//www.yunos.com/">YunOS</a>
+					<a target="_blank" class="dib" href="//www.aliqin.cn/">阿里通信</a>
+					<a target="_blank" class="dib" href="//www.net.cn/">万网</a>
+					<a target="_blank" class="dib" href="//www.autonavi.com/">高德</a>
+					<a target="_blank" class="dib" href="//www.uc.cn/">优视</a>
+					<a target="_blank" class="dib" href="//www.umeng.com/">友盟</a>
+					<a target="_blank" class="dib" href="//www.kanbox.com/">酷盘</a>
+					<a target="_blank" class="dib" href="//www.xiami.com/">虾米</a>
+					<a target="_blank" class="dib" href="//www.ttpod.com/">天天动听</a>
+					<a target="_blank" class="dib" href="//www.laiwang.com/">来往</a>
+					<a target="_blank" class="dib" href="//www.dingtalk.com/">钉钉</a>
+					<a target="_blank" class="dib" href="//www.alipay.com/">支付宝</a>
+                </div>
+				<div class="etao-copyright">Copyright&nbsp;©&nbsp;2010-2017&nbsp;ETAO.COM&nbsp;版权所有</div>
+				<p>增值电信业务经营许可证：浙B2-20080224<</p>
+
+            </div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/tool.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/super-item.js"></script>
+<script type="text/javascript" src="js/cookieTool.js"></script>
+<script type="text/javascript" src="js/Parabola.js"></script>
+<script type="text/javascript">
+//index的函数
+function initUI(userName){
+	if(userName!=null){
+		$('#welcomeBox').style.display="block";
+		$('#spanId').innerHTML=userName;
+		$('#loginBox').style.display="none";
+	}else{
+		$('#loginBox').style.display="block";
+		$('#welcomeBox').style.display="none";
+	}
+}
+
+window.onload=function(){
+// count_down
+var timer=null;
+	if(timer!=null){return;}
+	timer=setInterval(fn,10);
+	function fn(){
+			var d1=new Date('2019-01-01 22:00:00');
+			// console.log(d1);
+			var d2=new Date();
+			// console.log(d2);
+			var diffTime=d1-d2;
+			diffTime=diffTime/1000;
+			// console.log(diffTime);//656281.408s
+			var sec=parseInt(diffTime%60);
+			sec=sec<10?'0'+sec:sec;
+			var min=parseInt(diffTime/60)%60;
+			min=min<10?'0'+min:min;
+			var hour=parseInt(diffTime/(60*60))%60;
+			hour=hour<10?'0'+hour:hour;
+			// var date=parseInt(diffTime/(60*60*24));
+			// $('result1').value=date+'天'+hour+'小时'+min+'分'+sec+'秒';
+			$("#hours").value=hour;
+			$("#mins").value=min;
+			$("#secs").value=sec;
+	}
+//首页
+	//1.获取cookie
+	var user=getCookie("userId");
+	//2.将获取的键赋给span
+	initUI(user);
+	//3.注销并删除cookie
+	$('#btnOut').onclick=function(){
+		deleteCookie("userId");
+		location.href="login-etao.html";
+		// $('#loginBox').style.display="block";
+		// $('#welcomeBox').style.display="none";
+	}
+//滚动时固定second-nav
+	var left1=$('#second-nav').offsetLeft;
+	var top1=$('#second-nav').offsetTop;
+	window.onscroll=function(){
+		//1.获取页面的滚动距离
+		var scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+		//2.当页面滚动距离超过nav的top时将nav固定定位并赋值top:0,left保持不变
+		if(scrollTop>=top1){
+			$('#second-nav').style.cssText="position:fixed;z-index:10;transition:.2s ease-in;";
+			$('#second-nav').style.top=0;
+			$('#second-nav').style.left=left1+"px";
+			$('#tool').style.cssText="position:fixed;transition:.5s ease-in;";
+			$('#tool').style.left=this.left+"px";
+			$('#tool').style.top="70px";
+		}else{
+			$('#second-nav').style.position="static";
+		}
+	}
+//点击回到顶部
+	$('#backToTop').onclick=function(){
+		var scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+		while(scrollTop>=0){
+			scrollTop-=10;
+			document.documentElement.scrollTop=scrollTop+"px";
+		}
+	}
+//点击nav的li
+	var lis = $('#ul-item').children;
+	for(var i=0; i=lis.length; i++){
+		lis[i].setAttribute("index",i);
+		lis[i].onclick = function(){
+			var i=this.getAttribute("index");
+			var aDom = lis[i].firstChild;
+			var p1 = aDom.children[0];
+			var p2 = aDom.children[1];
+			var span = aDom.children[2];
+			this.style.backgroundColor="#fc3434";
+			p1.style.color="white";
+			p2.style.color="white";
+			span.style.display="block";
+		}
+	}
+
+
+}
+</script>

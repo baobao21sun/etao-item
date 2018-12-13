@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>账户注册|一淘网</title>
+<style type="text/css">
+body,p,dl,dd,ul,ol,li,div,h1,h2,h3,h4,h5,h6,form,input,table,tr,td{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family: "微软雅黑",Arial;
+	background:#f8f8f8;
+}
+ul,ol{
+	list-style:none;
+}
+img{
+	border: 0;
+}
+a{
+	text-decoration: none;
+}
+.header{
+	display:flex;
+	width:100%;
+	height:100%;
+}
+.header_left{
+	flex:1;
+	width:750px;
+	height:340px;
+	/*background:pink;*/
+	position:relative;
+}
+.header_right{
+	flex:1;
+	background:orange;
+	position:relative;
+}
+.header_right form{
+	position:absolute;
+	left:40px;
+	top:40px;
+}
+span{background: #ccc;}
+</style>
+</head>
+<body>
+	<div class="header">
+		<div class="header_left" id="banner_left"></div>
+		<div class="header_right">
+			<form action="reg-etaobyform.php" method="post">
+			用&nbsp;户&nbsp;名：&nbsp;<input type="text" id="username" name="userName"><span id="nameSpan"></span><span id="userSpan"></span><br><br>
+			<div id="selectName"></div>
+			密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：&nbsp;&nbsp;<input type="password" id="userpass" name="userPass"><span id="psdSpan"></span>
+			<span id="weak">&nbsp;&nbsp;弱&nbsp;&nbsp;</span>
+			<span id="normal">&nbsp;&nbsp;中&nbsp;&nbsp;</span>
+			<span id="strong">&nbsp;&nbsp;强&nbsp;&nbsp;</span><br><br>
+			确认密码：<input type="password" id="psdIdOk"/><span id="phoneSpanOk"></span><br><br>
+			手机号码：<input type="text" id="phoneId"/><span id="phoneSpan"></span><br><br>
+			<input type="submit" value="注册" id="regBtn" style="width:230px;">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/tool.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script type="text/javascript">
+//连接PHP的函数
+function showData(str){
+	// console.log(str);
+	if(str=='0'){
+		$('#userSpan').style.color="green";
+		$('#userSpan').innerHTML="该用户名可以使用";
+	}else{
+		$('#userSpan').style.color="red";
+		$('#userSpan').innerHTML="用户名已存在，请重新输入";
+	}
+}
+function checkName(){
+	ajax03({
+		method:"post",
+		url:"reg-etaobyajax.php",
+		param:"userName="+this.value+"&userPass="+$("userpass").value,
+		func:showData
+	});
+}
+//正则验证函数
+function regCheck(str,type){
+	switch(type){
+		case "name": var pattern = /^[\w]{6,12}$/gi; break;
+		case "phone": var pattern = /^[1][\d]{10}$/gi; break;
+		default : null; 
+	}
+	return pattern.test(str);
+}
+window.onload=function(){
+	// banner_left
+	let s2 = new Slider(
+		$("#banner_left"),
+		750,
+		340,
+		["img/ban1.jpg","img/ban2.jpg"],
+		12,
+		"white",
+		"#fc3434",
+		true,
+		3000
+		);
+	s2.createUI();
+	s2.autoPlay();
+	s2.addEvent();
+	//form表单验证
+	//正则验证用户名并连接PHP验证用户名是否重复
+	$('#username').onblur=function(){
+		if(regCheck(this.value,'name') == true){
+			$('#nameSpan').innerHTML = "输入格式正确，";
+			$('#nameSpan').style.color = "green";
+		}else{
+			$('#nameSpan').innerHTML = "用户名需包含数字、字母及下划线共6-12位";
+			$('#nameSpan').style.color = "red";
+		}
+		checkName();//发送ajax验证用户名是否存在
+	}
+	// 验证密码
+	$('#userpass').onkeyup = function(){
+		var pass = this.value;
+		if(pass.length>=6 && pass.length<=16){
+			$('#psdSpan').innerHTML = "输入格式正确";
+			$('#psdSpan').style.color = "green";
+			// 判断是否存在数字
+			var hasNumber = false;
+			var regNumber = /\d/gi;
+			if(regNumber.test(pass)){
+				hasNumber = true;
+			}
+			// 判断是否存在字母
+			var hasLetter = false;
+			var regLetter = /[a-zA-Z]/gi;
+			if(regLetter.test(pass)){
+				hasLetter = true;
+			}
+			// 判断是否存在特殊字符
+			var hasSpecial = false;
+			var regSpecial = /[\@#\$!%&]/gi;
+			if(regSpecial.test(pass)){
+				hasSpecial = true;
+			}
+			var level = hasNumber+hasLetter+hasSpecial;
+			if(level == 1){
+				$('#weak').style.backgroundColor = "red";
+				$('#normal').style.backgroundColor = "#ccc";
+				$('#strong').style.backgroundColor = "#ccc";
+			}
+			if(level == 2){
+				$('#weak').style.backgroundColor = "#ccc";
+				$('#normal').style.backgroundColor = "yellow";
+				$('#strong').style.backgroundColor = "#ccc";
+			}
+			if(level == 3){
+				$('#weak').style.backgroundColor = "#ccc";
+				$('#normal').style.backgroundColor = "#ccc";
+				$('#strong').style.backgroundColor = "green";
+			}
+		}
+		else{
+			$('#psdSpan').innerHTML = "密码需包含数字、字母及特殊字符共6-16位";
+			$('#psdSpan').style.color = "red";
+		}
+	}
+	// 确认密码
+	$('#psdIdOk').onkeyup = function(){
+		if($('#psdIdOk').value == $('#userpass').value){
+			$('#phoneSpanOk').innerHTML = "输入正确";
+			$('#phoneSpanOk').style.color = "green";
+		}else{
+			$('#phoneSpanOk').innerHTML = "上下密码不一致";
+			$('#phoneSpanOk').style.color = "red";
+		}
+	}
+	//正则验证联系方式
+	$('#phoneId').onblur = function(){
+		if(regCheck(this.value,'phone') == true){
+			$('#phoneSpan').innerHTML = "输入格式正确";
+			$('#phoneSpan').style.color = "green";
+		}else{
+			$('#phoneSpan').innerHTML = "手机号码不合规范";
+			$('#phoneSpan').style.color = "red";
+		}
+	}
+	
+	
+}
+</script>

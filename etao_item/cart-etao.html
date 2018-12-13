@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>一淘网|购物车</title>
+<link rel="stylesheet" type="text/css" href="css/cart.css">
+</head>
+<body>
+<!-- top -->
+	<a class="etaoBg" href="javascript:;"></a>
+	<div class="etaoTop">
+		<div class="top_left">欢迎来到一淘网，阿里巴巴旗下生活省钱利器！</div>
+		<div class="top_right">
+			<div class="top_login">
+				<div id="welcomeBox" style="float:left;display:none;color:#37383d;">
+					欢迎您：<span id="spanId"></span>
+					<input type="button" value="退出" id="btnOut" style="outline:none;font-size:8px;background:#ccc;color:red;">
+				</div>
+				<div id="loginBox" style="float:left;display:none;color:#37383d;">
+					<a href="http://localhost/etao_item/login-etao.html">请登录</a>
+				</div>
+			</div>
+			<ul class="top_list">
+				<li>
+					<span class="li_long">|</span>
+					<span>我的订单</span>
+				</li>
+				<li>购物车</li>
+				<li>我的集分宝</li>
+				<li>消息</li>
+				<li>商家报名</li>
+			</ul>
+		</div>
+	</div>
+<!-- cart -->
+	<div class="cart">
+		<div class="shopping-cart" id="shoppingCart">
+			<div class="cart-title">
+				<h1><i style="color:red;font-weight:600;">一淘网</i>购物车</h1>
+			</div>
+			<table class="tab" id="goodsTable" border="1" cellspacing="0" cellpadding="2">
+				<tr style="font-weight:600;" width="50" height="50" cellpadding="10"  align="center">
+					<td>&nbsp;<input type="checkbox" id="chkAll">全选&nbsp;<input type="checkbox" id="unchk">反选</td>
+					<td>商品编号</td>
+					<td>商品信息</td>
+					<td>单价</td>
+					<td>数量</td>
+					<td>金额</td>
+					<td>操作</td>
+				</tr>
+			</table>
+			<ul class="sumUl">
+				<li><input type="checkbox" id="checkAll">全选</li>
+				<li>总金额：￥<span id="total">0.00</span></li>
+				<li><a href="javascript:;"></a>结算</li>
+			</ul>
+			<input type="button" id="btnSave" value="保存数据">
+		</div>
+	</div>
+<!-- footer -->
+	<div class="footer">
+		<div class="etao-footer">
+			<div class="etao_footer_list">
+				<dl>
+					<dt>关于我们</dt>
+					<dd><a href="javascript:;" target="_blank" titile="关于我们">关于一淘</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="法律声明">法律声明</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="诚聘英才">诚聘英才</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="廉政邮箱">廉政邮箱</a></dd>
+				</dl>
+				<dl>
+					<dt>帮助中心</dt>
+					<dd><a href="javascript:;" target="_blank" titile="新手指南">新手指南</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="关于返利">关于返利</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="关于集分宝">关于集分宝</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="关于会员特权">关于会员特权</a></dd>
+					<dd><a href="javascript:;" target="_blank" titile="联系客服">联系客服</a></dd>
+				</dl>
+				<dl>
+                  <dt align="center">手机一淘</dt>
+                  <dd>
+                      <a class="etao-scan" href="//mo.m.taobao.com/etao/etao_pc_download" target="_blank"><img src="img/load.jpg" width="119" height="162" alt="手机一淘"></a>
+                  </dd>
+              </dl>
+              <dl>
+                  <dt>优惠地图</dt>
+                      <dd>
+                        <a href="//www.etao.com/index.htm?jumpTo=J_superrebate" target="_blank" title="品牌特卖">品牌特卖</a>
+                      </dd>
+                      <dd>
+                        <a href="//www.etao.com/cjfl/flash.htm" target="_blank" title="限时闪购">限时闪购</a>
+                      </dd>
+              </dl>
+              <dl>
+                  <dt>商家合作</dt>
+                      <dd>
+                        <a href="//etao.bbs.taobao.com/detail.html?postId=2304505" target="_blank" title="报名入口">报名入口</a>
+                      </dd>
+                      <dd>
+                        <a href="//www.etao.com/newguide.htm?systype=wapa#!/main/guide?tab=aboutSeller" target="_blank" title="商家端问题">商家端问题</a>
+                      </dd>
+              </dl>
+			</div>
+			<div class="etao_footer_link">
+
+				<div class="etao_wrap">
+					<a target="_blank" class="dib" href="//page.1688.com/shtml/about/ali_group1.shtml">阿里巴巴集团</a>
+					<a target="_blank" class="dib" href="//www.taobao.com/">淘宝网</a>
+					<a target="_blank" class="dib" href="//www.tmall.com/">天猫</a>
+					<a target="_blank" class="dib" href="//ju.taobao.com/">聚划算</a>
+					<a target="_blank" class="dib" href="//www.aliexpress.com/">全球速卖通</a>
+					<a target="_blank" class="dib" href="//www.alibaba.com/">阿里巴巴国际交易市场</a>
+					<a target="_blank" class="dib" href="//www.1688.com/">1688</a><a target="_blank" class="dib" href="//www.alimama.com/">阿里妈妈</a>
+					<a target="_blank" class="dib" href="//www.alitrip.com/">阿里旅行·去啊</a>
+					<a target="_blank" class="dib" href="//www.aliyun.com/">阿里云计算</a>
+					<a target="_blank" class="dib" href="//www.yunos.com/">YunOS</a>
+					<a target="_blank" class="dib" href="//www.aliqin.cn/">阿里通信</a>
+					<a target="_blank" class="dib" href="//www.net.cn/">万网</a>
+					<a target="_blank" class="dib" href="//www.autonavi.com/">高德</a>
+					<a target="_blank" class="dib" href="//www.uc.cn/">优视</a>
+					<a target="_blank" class="dib" href="//www.umeng.com/">友盟</a>
+					<a target="_blank" class="dib" href="//www.kanbox.com/">酷盘</a>
+					<a target="_blank" class="dib" href="//www.xiami.com/">虾米</a>
+					<a target="_blank" class="dib" href="//www.ttpod.com/">天天动听</a>
+					<a target="_blank" class="dib" href="//www.laiwang.com/">来往</a>
+					<a target="_blank" class="dib" href="//www.dingtalk.com/">钉钉</a>
+					<a target="_blank" class="dib" href="//www.alipay.com/">支付宝</a>
+                </div>
+				<div class="etao-copyright">Copyright&nbsp;©&nbsp;2010-2017&nbsp;ETAO.COM&nbsp;版权所有</div>
+				<p>增值电信业务经营许可证：浙B2-20080224<</p>
+
+            </div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/tool.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/super-item.js"></script>
+<script type="text/javascript" src="js/cookieTool.js"></script>
+<script type="text/javascript" src="js/Parabola.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<!-- <script type="text/javascript" src="js/check.js"></script> -->
+<script type="text/javascript">
+//index的函数
+function initUI(userName){
+	if(userName!=null){
+		$('#welcomeBox').style.display="block";
+		$('#spanId').innerHTML=userName;
+		$('#loginBox').style.display="none";
+	}else{
+		$('#loginBox').style.display="block";
+		$('#welcomeBox').style.display="none";
+	}
+}
+//购物车的函数
+function add(){
+	var num=parseInt(this.parentNode.children[1].innerText);
+	num++;
+	this.previousElementSibling.innerText=num;
+	changeSum(1,this);
+}
+function jian(){
+	var num=parseInt(this.parentNode.innerText.slice(1,2));
+	num--;
+	if(num<0){num=0;return;}
+	this.nextElementSibling.innerText=num;
+	changeSum(-1,this);
+}
+function changeSum(sign,obj){
+	//1.获取单价
+	var everyPrice=parseInt(obj.parentNode.previousElementSibling.children[0].innerText);
+	// console.log(obj.parentNode.previousElementSibling.children[0].innerText);
+	//2.获取改变之前的sum
+	var sumPrice=parseInt(obj.parentNode.nextElementSibling.children[0].innerText);
+	//3.进行加法或者减法
+	obj.parentNode.nextElementSibling.children[0].innerText=sumPrice+sign*everyPrice;
+	var sum=parseInt($("#total").innerText);
+	let sumPriceAll = $(".sumPrice");
+	// console.log(sumPriceAll);
+	let price=0;
+	for(let i=0;i<sumPriceAll.length;i++){
+		price+=parseInt(sumPriceAll[i].innerText);
+	}
+	console.log(price);
+	$("#total").innerText=price;
+}
+function deleteGoods(obj){
+	if(window.confirm("您确定要删除吗？")==true){
+		 var tr=obj.parentNode.parentNode;
+		 console.log(tr);
+		 tr.remove();
+	}
+}
+window.onload=function(){
+//首页
+	//1.获取cookie
+	var user=getCookie("userId");
+	//2.将获取的键赋给span
+	initUI(user);
+	//3.注销并删除cookie
+	$('#btnOut').onclick=function(){
+		deleteCookie("userId");
+		location.href="login-etao.html";
+		// $('#loginBox').style.display="block";
+		// $('#welcomeBox').style.display="none";
+	}
+//打开页面先呈现以前保存的cookie
+	getData();
+//动态建立购物车商品信息
+	//1.先从服务器上面获取购物车中的信息呈现到页面
+	ajax03({
+		url:"getShoppingCart.php",
+		param:"vipName="+$("#spanId").innerHTML,
+		func:showData
+	});
+	function showData(str){
+		console.log(str);
+		let objs = JSON.parse(str);
+		for(let i in objs){
+			let tr = document.createElement("tr");
+			tr.style.cellpadding="10";
+
+			
+			// 选择按钮
+			let td1 = document.createElement("td");
+			td1.style.cssText="width:50px;text-align:center;";
+			td1.innerHTML="<input type='checkbox'/>";
+			tr.appendChild(td1);
+			// 商品编号
+			let td2 = document.createElement("td");
+			td2.style.cssText="width:80px;text-align:center;";
+			td2.innerHTML=objs[i].goodsId;
+			tr.appendChild(td2);
+			// 商品信息
+			let td3 = document.createElement("td");
+			td3.style.cssText="width:480px;padding-right:30px;";
+			tr.appendChild(td3);
+				let goodsImg = document.createElement("img");
+				goodsImg.src=objs[i].goodsImg;
+				goodsImg.style.cssText="padding:10px 0;float:left;width:150px;height:150px;";
+				td3.appendChild(goodsImg);
+				let goodsInfo = document.createElement("a");
+				goodsInfo.innerHTML=objs[i].goodsName;
+				goodsInfo.style.cssText="padding:10px;font-size:12px;display:block;max-height:36px;overflow:hidden;text-overflow:ellipsis;";
+				td3.appendChild(goodsInfo);
+			// 商品单价
+			let td4 = document.createElement("td");
+			td4.innerHTML="￥";
+				let everyPrice = document.createElement("span");
+				everyPrice.style.cssText="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;";
+				everyPrice.className="everyPrice";
+				everyPrice.innerHTML=objs[i].goodsPrice;
+				td4.appendChild(everyPrice);
+			td4.style.cssText="width:50px;padding:10px;text-align:center;";
+			tr.appendChild(td4);
+			// 商品数量
+			let td5 = document.createElement("td");
+			// td5.innerHTML="<span>-</span><span>1</span><span>+</span>";
+				let span1 = document.createElement("span");
+				span1.style.cssText="display:inline-block;border:1px solid #ccc;width:20px;height:20px;line-height:20px;background:#eee;cursor:pointer;text-align:center;";
+				span1.className="numBtn jian";
+				span1.innerHTML="-";
+				td5.appendChild(span1);
+
+				let span2 = document.createElement("span");
+				span2.style.cssText="display:inline-block;border-top:1px solid #ccc;border-bottom:1px solid #ccc;width:20px;height:20px;line-height:20px;text-align:center;";
+				span2.className="num"
+				span2.innerHTML=objs[i].goodsCount;
+				td5.appendChild(span2);
+
+				let span3 = document.createElement("span");
+				span3.style.cssText="display:inline-block;border:1px solid #ccc;width:20px;height:20px;line-height:20px;background:#eee;cursor:pointer;text-align:center;";
+				span3.className="numBtn add";
+				span3.innerHTML="+";
+				td5.appendChild(span3);
+
+			td5.style.cssText="width:104px;padding:10px;text-align:center;";
+			tr.appendChild(td5);
+			// 商品总价
+			let td6 = document.createElement("td");
+			td6.innerHTML="￥";
+				let sumPrice = document.createElement("span");
+				sumPrice.style.cssText="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;";
+				sumPrice.className="sumPrice";
+				sumPrice.innerHTML=objs[i].goodsPrice;
+				td6.appendChild(sumPrice);
+			td6.style.cssText="width:50px;padding:10px;text-align:center;";
+			tr.appendChild(td6);
+			// 操作
+			let td7 = document.createElement("td");
+			td7.style.cssText="width:50px;padding:10px;text-align:center;";
+			tr.appendChild(td7);
+				let a = document.createElement("a");
+				a.innerHTML="删除";
+				a.style.cssText="text-decoration:underline;color:red;cursor:pointer;";
+				a.className="deleteBtn";
+				td7.appendChild(a);
+		$("#goodsTable").appendChild(tr);
+		}
+	}
+	//2.点击全选按钮计算出总金额
+	$("#checkAll").onclick=function(){
+		var sum=parseInt($("#total").innerText);
+		let sumPriceAll = $(".sumPrice");
+		// console.log(sumPriceAll);
+		let price=0;
+		for(let i=0;i<sumPriceAll.length;i++){
+			price+=parseInt(sumPriceAll[i].innerText);
+		}
+		console.log(price);
+		$("#total").innerText=price;
+	}
+	//3.点击加减按钮重新计算总金额
+	var spanList=$(".numBtn");
+	for(var i=0;i<spanList.length;i++){
+		if(spanList[i].className.indexOf("add")>-1){
+			spanList[i].onclick=add;
+		}else if(spanList[i].className.indexOf("jian")>-1){
+			spanList[i].onclick=jian;
+		}
+	}
+	//4.保存购物车商品cookie
+	//获取数据放到json数组中
+	$("#btnSave").onclick=function(){
+		var arr=[];
+		var trs=$("#goodsTable").rows;
+		console.log(trs);
+		for(var i=1;i<trs.length;i++){//从第一行开始获取数据
+			//获取每一行的数据放到json中
+			var goods={
+				"goodsId":trs[i].children[1].innerHTML,
+				"goodsImg":trs[i].children[2].children[0].src,
+				"goodsName":trs[i].children[2].children[1].innerHTML,
+				"goodsEveryPrice":parseInt(trs[i].children[3].children[0].innerHTML),
+				"goodsCount":parseInt(trs[i].children[4].children[1].innerHTML),
+			}
+			arr.push(goods);
+		}
+		console.log(arr);
+		//保存数据
+		var str=JSON.stringify(arr);
+		console.log(str);
+		console.log(typeof str);
+		saveCookie("shoppingCart",str,100);
+	}
+	function getData(){
+		var str=getCookie("shoppingCart");
+		console.log(str);
+		let arr = JSON.parse(str);
+		for(let i in arr){
+			let tr = document.createElement("tr");
+			tr.style.cellpadding="10";
+
+			$("#goodsTable").appendChild(tr);
+			// 选择按钮
+			let td1 = document.createElement("td");
+			td1.style.cssText="width:50px;text-align:center;";
+			td1.innerHTML="<input type='checkbox'/>";
+			tr.appendChild(td1);
+			// 商品编号
+			let td2 = document.createElement("td");
+			td2.style.cssText="width:80px;text-align:center;";
+			td2.innerHTML=arr[i].goodsId;
+			tr.appendChild(td2);
+			// 商品信息
+			let td3 = document.createElement("td");
+			td3.style.cssText="width:480px;padding-right:30px;";
+			tr.appendChild(td3);
+				let goodsImg = document.createElement("img");
+				goodsImg.src=arr[i].goodsImg;
+				goodsImg.style.cssText="padding:10px 0;float:left;width:150px;height:150px;";
+				td3.appendChild(goodsImg);
+				let goodsInfo = document.createElement("a");
+				goodsInfo.innerHTML=arr[i].goodsName;
+				goodsInfo.style.cssText="padding:10px;font-size:12px;display:block;max-height:36px;overflow:hidden;text-overflow:ellipsis;";
+				td3.appendChild(goodsInfo);
+			// 商品单价
+			let td4 = document.createElement("td");
+			td4.innerHTML="￥";
+				let everyPrice = document.createElement("span");
+				everyPrice.style.cssText="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;";
+				everyPrice.className="everyPrice";
+				everyPrice.innerHTML=arr[i].goodsEveryPrice;
+				td4.appendChild(everyPrice);
+			td4.style.cssText="width:50px;padding:10px;text-align:center;";
+			tr.appendChild(td4);
+			// 商品数量
+			let td5 = document.createElement("td");
+			// td5.innerHTML="<span>-</span><span>1</span><span>+</span>";
+				let span1 = document.createElement("span");
+				span1.style.cssText="display:inline-block;border:1px solid #ccc;width:20px;height:20px;line-height:20px;background:#eee;cursor:pointer;text-align:center;";
+				span1.className="numBtn jian";
+				span1.innerHTML="-";
+				td5.appendChild(span1);
+
+				let span2 = document.createElement("span");
+				span2.style.cssText="display:inline-block;border-top:1px solid #ccc;border-bottom:1px solid #ccc;width:20px;height:20px;line-height:20px;text-align:center;";
+				span2.className="num"
+				span2.innerHTML=arr[i].goodsCount;
+				td5.appendChild(span2);
+
+				let span3 = document.createElement("span");
+				span3.style.cssText="display:inline-block;border:1px solid #ccc;width:20px;height:20px;line-height:20px;background:#eee;cursor:pointer;text-align:center;";
+				span3.className="numBtn add";
+				span3.innerHTML="+";
+				td5.appendChild(span3);
+
+			td5.style.cssText="width:104px;padding:10px;text-align:center;";
+			tr.appendChild(td5);
+			// 商品总价
+			let td6 = document.createElement("td");
+			td6.innerHTML="￥";
+				let sumPrice = document.createElement("span");
+				sumPrice.style.cssText="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;";
+				sumPrice.className="sumPrice";
+				sumPrice.innerHTML=arr[i].goodsEveryPrice*arr[i].goodsCount;
+				td6.appendChild(sumPrice);
+			td6.style.cssText="width:50px;padding:10px;text-align:center;";
+			tr.appendChild(td6);
+			// 操作
+			let td7 = document.createElement("td");
+			td7.style.cssText="width:50px;padding:10px;text-align:center;";
+			tr.appendChild(td7);
+				let a = document.createElement("a");
+				a.innerHTML="删除";
+				a.style.cssText="text-decoration:underline;color:red;cursor:pointer;";
+				a.className="deleteBtn";
+				td7.appendChild(a);
+		}
+	}
+	//5.删除商品
+	var deleteList=$(".deleteBtn");
+	console.log(deleteList);
+	for(var i=0;i<deleteList.length;i++){
+		deleteList[i].onclick=function(){
+			deleteGoods(this);
+			saveCookie("shoppingCart",'',-1);
+		}
+	}
+
+
+
+}
+</script>
