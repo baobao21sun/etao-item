@@ -146,6 +146,7 @@ a{
 	top:640px;
 	right:10px;
 	z-index:9;
+	opacity:1;
 }
 .tool_item{
 	border-radius:4px;
@@ -154,6 +155,7 @@ a{
 .tool_item li{
 	height: 62px;
     position:relative;
+    margin-bottom:1px;
 }
 .tool_item li:first-child a{
     border-radius: 4px 4px 0 0;

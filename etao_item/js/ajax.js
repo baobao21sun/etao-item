@@ -145,6 +145,6 @@ function ajax04UsePromise(obj){
 	}else{
 		xhr.send();
 	}
-	return p;//此处注意
+	return p;//此处注意不能遗漏
 }
 	

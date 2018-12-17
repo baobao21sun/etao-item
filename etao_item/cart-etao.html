@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>一淘网|购物车</title>
+<title>一淘网|直接进入购物车</title>
 <link rel="stylesheet" type="text/css" href="css/cart.css">
 </head>
 <body>
@@ -10,7 +10,7 @@
 	<a class="etaoBg" href="javascript:;"></a>
 	<div class="etaoTop">
 		<div class="top_left">欢迎来到一淘网，阿里巴巴旗下生活省钱利器！</div>
-		<div class="top_right">
+		<div class="top_right">                                     
 			<div class="top_login">
 				<div id="welcomeBox" style="float:left;display:none;color:#37383d;">
 					欢迎您：<span id="spanId"></span>
@@ -48,6 +48,9 @@
 					<td>金额</td>
 					<td>操作</td>
 				</tr>
+				<tr width="990">
+					<td colspan="7" align="center">购物车空空如也~~~</td>
+				</tr>  
 			</table>
 			<ul class="sumUl">
 				<li><input type="checkbox" id="checkAll">全选</li>
@@ -208,98 +211,17 @@ window.onload=function(){
 //打开页面先呈现以前保存的cookie
 	getData();
 //动态建立购物车商品信息
-	//1.先从服务器上面获取购物车中的信息呈现到页面
-	ajax03({
-		url:"getShoppingCart.php",
-		param:"vipName="+$("#spanId").innerHTML,
-		func:showData
-	});
-	function showData(str){
-		console.log(str);
-		let objs = JSON.parse(str);
-		for(let i in objs){
-			let tr = document.createElement("tr");
-			tr.style.cellpadding="10";
-
-			
-			// 选择按钮
-			let td1 = document.createElement("td");
-			td1.style.cssText="width:50px;text-align:center;";
-			td1.innerHTML="<input type='checkbox'/>";
-			tr.appendChild(td1);
-			// 商品编号
-			let td2 = document.createElement("td");
-			td2.style.cssText="width:80px;text-align:center;";
-			td2.innerHTML=objs[i].goodsId;
-			tr.appendChild(td2);
-			// 商品信息
-			let td3 = document.createElement("td");
-			td3.style.cssText="width:480px;padding-right:30px;";
-			tr.appendChild(td3);
-				let goodsImg = document.createElement("img");
-				goodsImg.src=objs[i].goodsImg;
-				goodsImg.style.cssText="padding:10px 0;float:left;width:150px;height:150px;";
-				td3.appendChild(goodsImg);
-				let goodsInfo = document.createElement("a");
-				goodsInfo.innerHTML=objs[i].goodsName;
-				goodsInfo.style.cssText="padding:10px;font-size:12px;display:block;max-height:36px;overflow:hidden;text-overflow:ellipsis;";
-				td3.appendChild(goodsInfo);
-			// 商品单价
-			let td4 = document.createElement("td");
-			td4.innerHTML="￥";
-				let everyPrice = document.createElement("span");
-				everyPrice.style.cssText="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;";
-				everyPrice.className="everyPrice";
-				everyPrice.innerHTML=objs[i].goodsPrice;
-				td4.appendChild(everyPrice);
-			td4.style.cssText="width:50px;padding:10px;text-align:center;";
-			tr.appendChild(td4);
-			// 商品数量
-			let td5 = document.createElement("td");
-			// td5.innerHTML="<span>-</span><span>1</span><span>+</span>";
-				let span1 = document.createElement("span");
-				span1.style.cssText="display:inline-block;border:1px solid #ccc;width:20px;height:20px;line-height:20px;background:#eee;cursor:pointer;text-align:center;";
-				span1.className="numBtn jian";
-				span1.innerHTML="-";
-				td5.appendChild(span1);
-
-				let span2 = document.createElement("span");
-				span2.style.cssText="display:inline-block;border-top:1px solid #ccc;border-bottom:1px solid #ccc;width:20px;height:20px;line-height:20px;text-align:center;";
-				span2.className="num"
-				span2.innerHTML=objs[i].goodsCount;
-				td5.appendChild(span2);
-
-				let span3 = document.createElement("span");
-				span3.style.cssText="display:inline-block;border:1px solid #ccc;width:20px;height:20px;line-height:20px;background:#eee;cursor:pointer;text-align:center;";
-				span3.className="numBtn add";
-				span3.innerHTML="+";
-				td5.appendChild(span3);
-
-			td5.style.cssText="width:104px;padding:10px;text-align:center;";
-			tr.appendChild(td5);
-			// 商品总价
-			let td6 = document.createElement("td");
-			td6.innerHTML="￥";
-				let sumPrice = document.createElement("span");
-				sumPrice.style.cssText="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;";
-				sumPrice.className="sumPrice";
-				sumPrice.innerHTML=objs[i].goodsPrice;
-				td6.appendChild(sumPrice);
-			td6.style.cssText="width:50px;padding:10px;text-align:center;";
-			tr.appendChild(td6);
-			// 操作
-			let td7 = document.createElement("td");
-			td7.style.cssText="width:50px;padding:10px;text-align:center;";
-			tr.appendChild(td7);
-				let a = document.createElement("a");
-				a.innerHTML="删除";
-				a.style.cssText="text-decoration:underline;color:red;cursor:pointer;";
-				a.className="deleteBtn";
-				td7.appendChild(a);
-		$("#goodsTable").appendChild(tr);
+	//2.点击加减按钮重新计算总金额
+	var spanList=$(".numBtn");
+	console.log(spanList);
+	for(var i=0;i<spanList.length;i++){
+		if(spanList[i].className.indexOf("add")>-1){
+			spanList[i].onclick=add;
+		}else if(spanList[i].className.indexOf("jian")>-1){
+			spanList[i].onclick=jian;
 		}
 	}
-	//2.点击全选按钮计算出总金额
+	//3.点击全选按钮计算出总金额
 	$("#checkAll").onclick=function(){
 		var sum=parseInt($("#total").innerText);
 		let sumPriceAll = $(".sumPrice");
@@ -311,15 +233,7 @@ window.onload=function(){
 		console.log(price);
 		$("#total").innerText=price;
 	}
-	//3.点击加减按钮重新计算总金额
-	var spanList=$(".numBtn");
-	for(var i=0;i<spanList.length;i++){
-		if(spanList[i].className.indexOf("add")>-1){
-			spanList[i].onclick=add;
-		}else if(spanList[i].className.indexOf("jian")>-1){
-			spanList[i].onclick=jian;
-		}
-	}
+
 	//4.保存购物车商品cookie
 	//获取数据放到json数组中
 	$("#btnSave").onclick=function(){
@@ -348,6 +262,7 @@ window.onload=function(){
 		var str=getCookie("shoppingCart");
 		console.log(str);
 		let arr = JSON.parse(str);
+		console.log(arr);
 		for(let i in arr){
 			let tr = document.createElement("tr");
 			tr.style.cellpadding="10";
@@ -429,6 +344,93 @@ window.onload=function(){
 				td7.appendChild(a);
 		}
 	}
+	//1.从服务器上面获取购物车中的信息呈现到页面
+	/*ajax03({
+		url:"getShoppingCart.php",
+		param:"vipName="+$("#spanId").innerHTML,
+		func:showData
+	});
+	function showData(str){
+		console.log(str);
+		let objs = JSON.parse(str);
+		for(let i in objs){
+			let tr = document.createElement("tr");
+			tr.style.cellpadding="10";
+			// 选择按钮
+			let td1 = document.createElement("td");
+			td1.style.cssText="width:50px;text-align:center;";
+			td1.innerHTML="<input type='checkbox'/>";
+			tr.appendChild(td1);
+			// 商品编号
+			let td2 = document.createElement("td");
+			td2.style.cssText="width:80px;text-align:center;";
+			td2.innerHTML=objs[i].goodsId;
+			tr.appendChild(td2);
+			// 商品信息
+			let td3 = document.createElement("td");
+			td3.style.cssText="width:480px;padding-right:30px;";
+			tr.appendChild(td3);
+				let goodsImg = document.createElement("img");
+				goodsImg.src=objs[i].goodsImg;
+				goodsImg.style.cssText="padding:10px 0;float:left;width:150px;height:150px;";
+				td3.appendChild(goodsImg);
+				let goodsInfo = document.createElement("a");
+				goodsInfo.innerHTML=objs[i].goodsName;
+				goodsInfo.style.cssText="padding:10px;font-size:12px;display:block;max-height:36px;overflow:hidden;text-overflow:ellipsis;";
+				td3.appendChild(goodsInfo);
+			// 商品单价
+			let td4 = document.createElement("td");
+			td4.innerHTML="￥";
+				let everyPrice = document.createElement("span");
+				everyPrice.style.cssText="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;";
+				everyPrice.className="everyPrice";
+				everyPrice.innerHTML=objs[i].goodsPrice;
+				td4.appendChild(everyPrice);
+			td4.style.cssText="width:50px;padding:10px;text-align:center;";
+			tr.appendChild(td4);
+			// 商品数量
+			let td5 = document.createElement("td");
+				let span1 = document.createElement("span");
+				span1.style.cssText="display:inline-block;border:1px solid #ccc;width:20px;height:20px;line-height:20px;background:#eee;cursor:pointer;text-align:center;";
+				span1.className="numBtn jian";
+				span1.innerHTML="-";
+				td5.appendChild(span1);
+
+				let span2 = document.createElement("span");
+				span2.style.cssText="display:inline-block;border-top:1px solid #ccc;border-bottom:1px solid #ccc;width:20px;height:20px;line-height:20px;text-align:center;";
+				span2.className="num"
+				span2.innerHTML=objs[i].goodsCount;
+				td5.appendChild(span2);
+
+				let span3 = document.createElement("span");
+				span3.style.cssText="display:inline-block;border:1px solid #ccc;width:20px;height:20px;line-height:20px;background:#eee;cursor:pointer;text-align:center;";
+				span3.className="numBtn add";
+				span3.innerHTML="+";
+				td5.appendChild(span3);
+			td5.style.cssText="width:104px;padding:10px;text-align:center;";
+			tr.appendChild(td5);
+			// 商品总价
+			let td6 = document.createElement("td");
+			td6.innerHTML="￥";
+				let sumPrice = document.createElement("span");
+				sumPrice.style.cssText="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;";
+				sumPrice.className="sumPrice";
+				sumPrice.innerHTML=objs[i].goodsPrice;
+				td6.appendChild(sumPrice);
+			td6.style.cssText="width:50px;padding:10px;text-align:center;";
+			tr.appendChild(td6);
+			// 操作
+			let td7 = document.createElement("td");
+			td7.style.cssText="width:50px;padding:10px;text-align:center;";
+			tr.appendChild(td7);
+				let a = document.createElement("a");
+				a.innerHTML="删除";
+				a.style.cssText="text-decoration:underline;color:red;cursor:pointer;";
+				a.className="deleteBtn";
+				td7.appendChild(a);
+			$("#goodsTable").appendChild(tr);
+		}
+	}*/
 	//5.删除商品
 	var deleteList=$(".deleteBtn");
 	console.log(deleteList);
